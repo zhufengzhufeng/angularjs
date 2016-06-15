@@ -5,15 +5,15 @@
     <title>Title</title>
 </head>
 <body ng-init="phones=[{name:['a','c']},{name:['e','f','g']},{name:['a']}]">
-<div ng-repeat="phone in phones">
-    {{$index}}
+<div ng-repeat="phone in phones" ng-init="parent=$index">
     <div ng-repeat="p in phone.name">
-       {{$index}}
+        list[{{parent}}][{{$index}}]
     </div>
 </div>
 <script src="bower_components/angular/angular.js"></script>
 <script>
-
+    //ng-init另一种用途 双重嵌套 保留父亲中的变量
+    //ng-repeat会生成独立作用域
 </script>
 </body>
 </html>
