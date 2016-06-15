@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" ng-model="name">
+<div ng-switch="name">
+    <div ng-switch-when="hello">hello</div>
+    <div ng-switch-when="world">world</div>
+    <div ng-switch-default>default</div>
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    //ng-switch切换数据显示不同的内容
+    //ng-switch 是根据model上name的值变化进行条件判断
+    //ng-switch-when 里面装的是纯字符串
+</script>
+</body>
+</html>
