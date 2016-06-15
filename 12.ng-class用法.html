@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body ng-init="style='alert-danger'">
+<!--当我们设定的数据style等于我们自己的样式，表示需要增加这个样式-->
+<!--如果冒号右边为true 冒号左边的样式就会被增加上-->
+<div class="alert" ng-class="{'alert-danger':style=='alert-danger','alert-info':style=='alert-info'}">hello</div>
+
+
+
+<div class="alert" ng-class="style" role="alert">...</div>
+<!--<div class="alert alert-info" role="alert">...</div>
+<div class="alert alert-warning" role="alert">...</div>
+<div class="alert alert-danger" role="alert">...</div>-->
+<script src="bower_components/angular/angular.js"></script>
+</body>
+</html>

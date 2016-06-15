@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-init="name={aa:1}">
+{{123.123 | currency}} 货币过滤器 <br>
+{{'abcdefg' | uppercase}}   大小写转换 <br>
+{{'ABCDFEF' | lowercase}}   <br>
+{{'1234567800' | limitTo:3}}限制显示的位数 <br>
+{{'123123123123.23' | number:0}}
+<pre>
+{{name | json}} 转换成json格式显示给我们
+</pre>
+//日期过滤器
+{{1465978262773 | date:'yyyy hh:ss'}}
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    //都是angular给我们提供的常用过滤器
+</script>
+</body>
+</html>

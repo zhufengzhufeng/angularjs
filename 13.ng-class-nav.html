@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {list-style: none;}
+        li{display: inline-block}
+        a{width: 40px;line-height: 30px; outline: 1px solid darkred}
+        li.active{
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+<ul ng-init="init='home'">
+    <li ng-click="init='home'" ng-class="{'active':init=='home'}"><a>home</a></li>
+    <li ng-click="init='contact'" ng-class="{'active':init=='contact'}"><a>contact</a></li>
+    <li ng-click="init='introduce'" ng-class="{'active':init=='introduce'}"><a>introduce</a></li>
+</ul>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    //思路
+    //设定一个初始active选项 （默认被激活）
+    //当我们点击某一个的时候让初始的这一项等于我们点击的这一项，给当前自己加上这个样式
+</script>
+</body>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="angular.js"></script>
+<script>
+    //一个页面里写的话只有一个ng-app
+    //指定ng-app的名字 appModule
+    //在引入angularjs以后默认会有一个angular对象，
+    //一切从模块开始
+    //创建模块
+    // 1.第一个参数模块的名字
+    // 2.第二个参数叫依赖的模块，如过没有要用空数组占位
+    // 3.第三个参数叫配置项
+    var app = angular.module('appModule',[]);
+    //angular.module('appModule')//取出模块
+    //app也代表当前的模块
+</script>
+</body>
+</html>

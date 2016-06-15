@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-init="phones=[{name:'苹果',age:5},{name:'mac',age:8},{name:'pro',age:20},{name:'air',age:1}];flag=true">
+    <button ng-click="flag=!flag"></button>
+    <ul>
+        <li ng-repeat="phone in phones | orderBy:'-age':flag">{{phone.name}}{{phone.age}}</li>
+    </ul>
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    //ng-repeat想让谁重复 就写在谁身上
+    //orderBy写在遍历里面 可以通过 orderBy:'age':'reverse'可以进行倒序 第二个冒号如果是true就是正序，如果是false就是倒序
+</script>
+</body>
+</html>

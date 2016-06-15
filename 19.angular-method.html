@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1"></div>
+<script src='./angular.js'></script>
+<script>
+    //当我们引入angularjs后就会给我们一个全局的angular对象
+    //1. angular.element 将原声对象转化成jq对象
+    //console.log(angular.element());
+    angular.element(div1).html('123');
+    angular.element(div1).css('fontSize','40px');
+   //要指定px
+    //将字符串转换成大写
+    var upper = angular.uppercase('acdvasd');
+    console.log(upper);
+    //将字符串转换成小写
+    var lower = angular.lowercase('AVCASF');
+    console.log(lower);
+    //判断两个值是否相等
+    console.log(angular.equals(NaN,NaN));//true
+    //对象的继承angular.extend
+    var a = {'name':1};
+    var b = {'age':2};
+    var c = {};
+    //把后面的给前面的
+    angular.extend(c,a,b);
+    console.log(c);
+    //JSON.parse JSON.stringify
+    //fromJson  toJson
+    var json = '{"age":1,"name":2}';
+    //变成对象fromJson
+    json = angular.fromJson(json);
+    //变成字符串格式
+    json = angular.toJson(json);
+    console.log(json);
+    //复制属性
+    var a = {'name':1};
+    var b = {'age':2};
+    angular.copy(a,b);//把a的值粘贴到b上 b的旧值消失了
+    console.log(b);
+    var arr = [{name:1},{name:2},{name:3}];
+    //angular中的遍历方法
+    var result = [];
+    angular.forEach(arr, function (item) {
+        this.push(item.name);//以result为this指向
+    },result);
+    console.log(result);
+    function cb(){
+        console.log(this.name);
+    }
+    var obj = {name:1};
+    var c = angular.bind(obj,cb);//第一个是当前this对象，要绑定的函数
+    c();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

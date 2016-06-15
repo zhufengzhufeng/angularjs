@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            background:red
+        }
+        .color{
+            color: yellow;
+        }
+    </style>
+</head>
+<body ng-init="isActive=true;style1=true;style2=true">
+<div ng-class="{true:'color',false:'red'}[isActive]">hello angular baby</div>
+<div class="color" ng-class="{'red':style2}">hello react mm</div>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    //动态使用ng-class
+    //ng-class和我们的class属性可以共存
+    //写法1 {true:'',false:''}[isActive]  根据isActive值增加不同的样式（只能切换，true，false）
+    //写法2 {'样式1':true,'样式2':true.....}
+</script>
+</body>
+</html>

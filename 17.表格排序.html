@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div ng-init="phones=[{name:'苹果',age:5,chinese:60},{name:'mac',age:8,chinese:48},{name:'pro',age:20,chinese:90},{name:'air',age:1,chinese:6}];flag='count'" >
+<table class="table table-responsive">
+    <tr>
+        <th>序号</th>
+        <th>名字</th>
+        <th ng-click="flag='age'">年龄</th>
+        <th ng-click="flag='chinese'">语文分数</th>
+    </tr>
+    <tr ng-repeat="phone in phones | orderBy:flag">
+        <td>{{$index+1}}</td>
+        <td>{{phone.name}}</td>
+        <td>{{phone.age}}</td>
+        <td>{{phone.chinese}}</td>
+    </tr>
+</table>
+
+</div>
+<script src="bower_components/angular/angular.js"></script>
+
+</body>
+</html>
