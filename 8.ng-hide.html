@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body ng-init="flag=true">
+<div ng-click="flag=!flag">
+    {{flag?'显示':'隐藏'}}
+</div>
+<!--控制content盒子显示/隐藏-->
+<div ng-if="flag">
+    content
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+//    <div ng-click="flag=flag=='显示'?'隐藏':'显示'">{{flag}}</div>
+    //ng-hide 当flag对应的值变成true时 隐藏掉 否则显示
+    //ng-show和ng-hide正好相反
+    //ng-if当条件成立时显示 不成立不显示
+
+    //ng-show/ng-hide 单纯操作我们的css样式
+    //ng-if如果条件不成立 下面的命令不执行，并且移出元素
+</script>
+</body>
+</html>

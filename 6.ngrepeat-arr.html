@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-init="phones=['三星','华为','苹果','苹果']">
+<div ng-repeat="phone in phones track by $index">
+    {{phone}}
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    //当我们的数据尤其是数组用重复数据，必须用track by 通过指定的属性遍历
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+</head>
+<body ng-init="phones=[]">
+<div ng-if="phones.length" ng-cloak>
+    <div ng-repeat="phone in phones">
+        {{phone}}
+    </div>
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    //ng-show 还是走里面的指令 只是=false隐藏掉了
+    //ng-if 为false时 里面的代码不再执行
+    //如果频繁的切换 用ng-show/ng-hide
+    //空数组 表示为真 0 Nan '' null undefined
+</script>
+</body>
+</html>

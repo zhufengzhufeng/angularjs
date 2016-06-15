@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .block{
+            display: block;
+        }
+        .none{
+            display: none;
+        }
+    </style>
+</head>
+<body ng-init="flag=true">
+<div ng-click="flag=!flag">
+    {{flag?'显示':'隐藏'}}
+</div>
+<!--控制content盒子显示/隐藏-->
+<div class="{{flag?'none':'block'}}">
+    content
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+//    <div ng-click="flag=flag=='显示'?'隐藏':'显示'">{{flag}}</div>
+</script>
+</body>
+</html>
