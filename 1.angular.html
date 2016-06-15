@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{name?name:'hello'}}
+<div >
+    <input type="text" ng-model="name">
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    //ng-app加在哪里 哪里就归angular所管理，如果不加表示不是angular所管理，不会启动应用
+    //$rootScope就是我们全局作用域（不要污染全局变量）
+    //ng-xxx表示angular中自带的指令，如果我们后期写指令的话 不要以ng开头
+    //model是我们的数据 ng-model相当于在我们rootScope上挂载了一个属性
+    //表达式
+    //1.通过{{}}将模型上的数据显示出来
+    //2.挂载在rootscope上内容可以在ng-app里面任意位置访问
+    //3.可以运行我们的表达式
+    //3.可以用作三元
+</script>
+</body>
+</html>

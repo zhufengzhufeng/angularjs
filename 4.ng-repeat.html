@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-init="phones=[{name:'三星'},{name:'华为'},{name:'苹果'}]">
+<div ng-repeat="p in phones">{{$index+1}}{{p.name}} {{$even}}</div>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    //ng-repeat的作用 遍历数据 用法  xxx in data
+    //$index代表当前索引值 $middle $first $last $even $odd
+    //ng-repeat 会生成独立作用域
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-init="phones=[{name:['a','c']},{name:['e','f','g']},{name:['a']}]">
+<div ng-repeat="phone in phones">
+    {{$index}}
+    <div ng-repeat="p in phone.name">
+       {{$index}}
+    </div>
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+
+</script>
+</body>
+</html>

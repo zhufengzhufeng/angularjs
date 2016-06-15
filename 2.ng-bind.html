@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+</head>
+<body>
+<input type="text" ng-model="name">
+<input type="text" ng-model="age">
+{{<span >{{name}}</span>}}
+<div ng-cloak>{{name}}</div>
+<div ng-bind="name?name:'hello'"></div>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    //ng-bind 用ng-bind可以解决一个变量闪烁的问题
+    //ng-bind 绑定一个model 因为是在标签内的属性，所以不会出现闪烁，他的用法和我们的{{}}就是一样的
+    //ng-cloak加上以后可以防止闪烁问题(在使用ng-clock的时候要引入css)
+    //ng-non-bindable 不将{{}}解析，将内容原封不动的输出出来
+    //ng-bind-template绑定多个model
+
+    //> 注意 我们angular想要输出字符串一定要使用''
+</script>
+</body>
+</html>
