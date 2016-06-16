@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="firstCtrl">
+    {{name.name}}
+</div>
+<div ng-controller="secondCtrl">
+    {{name.name}}
+</div>
+<script src="angular.js"></script>
+<script>
+    var app = angular.module("appModule",[]);
+    //可以通过模块创建多个controller
+    //controller可以嵌套
+    //和函数作用域一样 自己家没有就往上找
+    //在指令中操作DOM，控制器就是用来控制的，不是操作DOM的
+    //MVVM Model-View-viewModel 通过viewModel实现双向数据绑定，$scope是注入进来的
+    //$scope 防止压缩 所以采用数组的方式
+    //在执行的时候配置全局变量$rootScope
+    app.run(['$rootScope',function ($rootScope) {
+        $rootScope.name = {name:2};
+    }]);
+    app.controller('firstCtrl',['$scope',function ($scope,$rootScope) {
+        $scope.name={name:1};
+       // $rootScope.name = {name:2}
+    }]);
+    app.controller('secondCtrl', function ($scope) {
+       //$scope.name={name:2};
+    });
+</script>
+</body>
+</html>

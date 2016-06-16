@@ -5,7 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<div ng-controller="firstCtrl">{{name}}</div>
+<!--ng-click="metho)d(" 要让方法执行-->
+<div ng-controller="firstCtrl"
+     ng-click="name=name+1">{{name}}</div>
 <script src="angular.js"></script>
 <script>
     //app代表当前的模块
@@ -17,10 +19,10 @@
     //将控制器用在我们的dom上 ng-controller="控制器的名字"
     app.controller('firstCtrl', function ($scope) {
         //在当前作用域下声明一个name值 (私有的)
-        $scope.name=0;
-        $scope.method = function () {
-            alert(1);
-        }
+    $scope.name=0;
+//    $scope.method = function () {
+//        $scope.name++;
+//    }
     });
 </script>
 </body>
