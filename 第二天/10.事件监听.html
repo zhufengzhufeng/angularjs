@@ -42,12 +42,14 @@
             //第一个参数是事情的名字，第二个参数是要说的内容
             $scope.$emit('total',$scope.product.price*$scope.product.count);
             //发射一个事件方法叫total 内容是xxxx
-        }
+        };
         $scope.$on('count', function (ev,data) {
             //全额/单价=数量
             $scope.product.count = data/$scope.product.price;
-        })
+        });
     });
+    //两个平级的controller如何交互？
+    //永远有一个最大的$rootScope 先向上发射在向下传播
 </script>
 </body>
 </html>
