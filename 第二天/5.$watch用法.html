@@ -25,13 +25,28 @@
         }
         //监控当前买的商品的总价
         $scope.total= function () {
-            return  $scope.product.price*$scope.product.count;
-        }
+            return $scope.product.price*$scope.product.count;
+        };
         //监控总价的变化
-        $scope.$watch($scope.total, function (newVal,oldVal) {
-            newVal
-        })
+        //写法1
+        $scope.$watch(function () {
+            //用这种方法的时候增加return
+            return $scope.total();//当外层函数执行的时候，让里面的函数执行了，加上return后表示监控的是total执行后的结果
+        }, function (newVal,oldVal) {
+            $scope.product.post=newVal>=100?0:10;
+        });
+        //写法2
+        /*$scope.$watch($scope.total, function (newVal,oldVal) {
+          $scope.product.post=newVal>=100?0:10;
+        });*/
+        //第一个参数可以放model的名字 错误的'total'
+        //放函数 函数执行后的结果返回$scope上的变量
+        //还可以直接监控$scope.total方法
     });
+    //跟watch监控的一样
+    /*function a(){}
+    function fn(){return a();}
+    function fn(){a();}*/
 </script>
 </body>
 </html>

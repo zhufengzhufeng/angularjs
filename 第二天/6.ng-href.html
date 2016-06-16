@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <a ng-href="{{src}}">go bd</a>
+</div>
+<script src="angular.js"></script>
+<script>
+    //当src 没有取到值得时候不要加载空的链接
+    //尽量使用angular所提供好的
+    var app = angular.module('appModule',[]);
+    app.controller('ctrl', function ($scope,$timeout) {
+        $timeout(function () {
+            //别忘了加协议
+            $scope.src = 'http://www.baidu.com';
+        },5000);
+    });
+</script>
+</body>
+</html>

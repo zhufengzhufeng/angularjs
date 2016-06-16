@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="parentCtrl">
+    商品总价 <input type="text" ng-model="total">
+    <div ng-controller="childCtrl">
+商品的名称 {{product.name}} <br>
+商品的单价 {{product.price}} <br>
+商品的数量 <input type="text" ng-model="product.count" ng-change="total()">
+    </div>
+</div>
+<script src="angular.js"></script>
+<script>
+    //控制器可以嵌套 父子控制器之间交互数据
+    //有一个商品总价  商品数量 商品单价
+    //事件传播 儿子->爸爸  爸爸->儿子
+    //想让一个控制器知道 就要用$on方法
+    //如果是想让父亲知道就要用$emit
+    //如果是想让儿子知道就用$broadcast
+    var app = angular.module('appModule',[]);
+    app.controller('parentCtrl', function ($scope) {
+        $scope.total = 10;
+        //第一个参数要监听的名字
+        $scope.$on('total', function (ev,data) {
+            //ev是事件源  data是儿子真正发过来的数据
+            $scope.total = data;
+        });
+        //监听total值得变化 值变化后触发回掉函数
+        $scope.$watch('total', function () {
+            //向下广播事件 同$emit
+            $scope.$broadcast('count',$scope.total);
+        });
+    });
+    app.controller('childCtrl', function ($scope) {
+        $scope.product = {name:'火车', price:10,count:1}
+        $scope.total = function () {
+            //当input框值改变的时候要向父亲发射事件
+            //第一个参数是事情的名字，第二个参数是要说的内容
+            $scope.$emit('total',$scope.product.price*$scope.product.count);
+            //发射一个事件方法叫total 内容是xxxx
+        }
+        $scope.$on('count', function (ev,data) {
+            //全额/单价=数量
+            $scope.product.count = data/$scope.product.price;
+        })
+    });
+</script>
+</body>
+</html>

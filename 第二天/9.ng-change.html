@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <input type="text" ng-model="name" ng-change="change()" ng-copy="copy()" ng-paste="past()" ng-cut="cut()">
+</div>
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('appModule',[]);
+    app.controller('ctrl', function ($scope,$timeout) {
+        $scope.change = function () { //相当于原生oninput
+            console.log($scope.name);
+        };
+        $scope.past = function () {alert('你使用了粘贴');};
+        $scope.copy = function () {alert('你使用了复制');};
+        $scope.cut = function () {alert('你使用了剪切');}
+    });
+</script>
+</body>
+</html>

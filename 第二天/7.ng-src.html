@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <img ng-src="{{src}}">
+</div>
+<script src="angular.js"></script>
+<script>
+    //%7B%7B%7D%7D {{}} 会默认的请求{{src}}
+    //ng-src当真正取回src的值的时候进行加载图片
+    var app = angular.module('appModule',[]);
+    app.controller('ctrl', function ($scope,$timeout) {
+        $scope.src='https://angularjs.org/img/AngularJS-large.png';
+    });
+</script>
+</body>
+</html>

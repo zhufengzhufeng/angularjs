@@ -69,3 +69,8 @@ app.controller()
 - $timeout $interval angular中的内置服务
 - 取消定时器 $timeout.cancel()/$interval.cancel()
 > 已经有apply功能的 就不要在调用apply了
+## $watch
+- 可以监听模型数据的变化
+```
+$scope.$watch('模型的名字',function(){})
+```
