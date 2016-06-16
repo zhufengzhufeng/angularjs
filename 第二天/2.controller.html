@@ -20,17 +20,21 @@
     //在指令中操作DOM，控制器就是用来控制的，不是操作DOM的
     //MVVM Model-View-viewModel 通过viewModel实现双向数据绑定，$scope是注入进来的
     //$scope 防止压缩 所以采用数组的方式
-    //在执行的时候配置全局变量$rootScope
+    //在执行的时候配置全局变量$rootScope(会先执行run方法)
     app.run(['$rootScope',function ($rootScope) {
         $rootScope.name = {name:2};
     }]);
     app.controller('firstCtrl',['$scope',function ($scope,$rootScope) {
         $scope.name={name:1};
        // $rootScope.name = {name:2}
+        console.log($rootScope);
     }]);
     app.controller('secondCtrl', function ($scope) {
-       //$scope.name={name:2};
+        //$scope.name={name:2};
     });
+
+
+
 </script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="ctrl">
+    {{name}}
+</div>
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('appModule',[]);
+    app.controller('ctrl', function ($scope,$interval) {
+        $scope.name = 1;
+
+        setInterval(function(){
+            /*$scope.name++;
+            //在setInterval函数里操作了数据，但是angular不知道，我们要告诉他
+            //1.写法1
+            $scope.$apply();//通知数据改变了刷新视图吧*/
+            //2.写法2
+            /*$scope.$apply(function () {
+                $scope.name++;
+            });*/
+            //3.写法3 我们使用angular自带的就不需要刷新视图 采用$interval
+            //$interval相当于封装了setInterval只是自带apply
+
+        },1000);
+        $interval(function () {
+            $scope.name++;
+            //这里就不要在调用apply了 因为已经默认调用过了
+            //$scope.$apply();
+        },1000);
+    });
+</script>
+</body>
+</html>
