@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="firstCtrl">{{name}}</div>
+<script src="angular.js"></script>
+<script>
+    //app代表当前的模块
+    var app = angular.module("appModule",[]);
+    //声明一个控制器 用我们的模块声明
+    //一切从模块开始
+    //param1 是控制的名字
+    //当我们创建了控制以后会送一个$scope,表示当前作用域
+    //将控制器用在我们的dom上 ng-controller="控制器的名字"
+    app.controller('firstCtrl', function ($scope) {
+        //在当前作用域下声明一个name值 (私有的)
+        $scope.name=0;
+        $scope.method = function () {
+            alert(1);
+        }
+    });
+</script>
+</body>
+</html>
