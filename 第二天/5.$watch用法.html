@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="ctrl">
+    商品的名称 {{product.name}} <br>
+    商品的价格 {{product.price}} <br>
+    商品的数量 <input type="text" ng-model="product.count"> <br>
+    商品的邮费 {{product.post}}
+    商品的总价格 {{total() + product.post}}
+</div>
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('appModule',[]);
+    app.controller('ctrl', function ($scope) {
+        $scope.product = {
+            name:'飞机',
+            price:20,
+            count:1,
+            post:10
+        }
+        $scope.total= function () {
+            return  $scope.product.price*$scope.product.count;
+        }
+    });
+</script>
+</body>
+</html>

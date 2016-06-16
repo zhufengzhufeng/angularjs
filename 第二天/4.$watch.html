@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="ctrl">
+    <input type="text" ng-model="name">
+</div>
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('appModule',[]);
+    app.controller('ctrl', function ($scope) {
+        $scope.name = 100;
+        //监控input的值的变化
+        //第一个参数可以是监听的模型的名字
+        //写法1
+       /* $scope.$watch('name', function (newVal,oldVal) {
+            console.log(newVal,oldVal);
+        });*/
+        //写法2 (第一个参数变成了函数)
+        $scope.$watch(function () {
+            return $scope.name;
+        }, function (newVal,oldVal) {
+            console.log(newVal,oldVal);
+        });
+    });
+</script>
+</body>
+</html>
