@@ -11,7 +11,7 @@
 <script src="angular.js"></script>
 <script>
     var app = angular.module('appModule',[]);
-    app.controller('ctrl', function ($scope,$interval) {
+    app.controller('ctrl', function ($scope,$interval,$timeout) {
         $scope.name = 1;
 
         setInterval(function(){
@@ -27,10 +27,20 @@
             //$interval相当于封装了setInterval只是自带apply
 
         },1000);
-        $interval(function () {
+        var timer = $interval(function () {
             $scope.name++;
+            if($scope.name>=5){
+                console.log(1);
+                //取消定时器
+                $interval.cancel(timer);
+                //clearInterval(timer);
+            }
             //这里就不要在调用apply了 因为已经默认调用过了
             //$scope.$apply();
+        },1000);
+        //用法同setTimeout
+        var timer1 = $timeout(function () {
+            $timeout.cancel(timer1);
         },1000);
     });
 </script>
