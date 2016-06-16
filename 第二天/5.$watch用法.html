@@ -14,6 +14,7 @@
 </div>
 <script src="angular.js"></script>
 <script>
+    //监控总价格是否满百 这个总价格是不包括邮费的
     var app = angular.module('appModule',[]);
     app.controller('ctrl', function ($scope) {
         $scope.product = {
@@ -22,9 +23,14 @@
             count:1,
             post:10
         }
+        //监控当前买的商品的总价
         $scope.total= function () {
             return  $scope.product.price*$scope.product.count;
         }
+        //监控总价的变化
+        $scope.$watch($scope.total, function (newVal,oldVal) {
+            newVal
+        })
     });
 </script>
 </body>
