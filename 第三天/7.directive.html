@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<hello></hello>
+<div hello></div>
+<div class="hello"></div>
+<!-- directive:hello -->
+<script src="angular.js"></script>
+<script>
+    //指令分为四种  元素指令 属性质量 类指令 注释指令 E C A M
+    var app = angular.module('appModule',[]);
+    //声明一个hello的指令
+    app.directive('hello', function () {
+        return {
+            restrict:'ECMA',//限定angular的使用范围
+            //template：模板 默认是2个 EA 默认解析element和Attribute
+            replace:true,//将原有的指令替换掉 注释前后要有空格
+            template:'<div>Hello world</div>',
+            link: function (scope,element,attr) {
+                //链接函数   当前作用域 当前jq对象, 属性
+                //angular.element
+            }
+        }
+    })
+</script>
+</body>
+</html>

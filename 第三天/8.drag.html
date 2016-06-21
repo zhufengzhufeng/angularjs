@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background: red;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        div + div{
+            background: yellow;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+<div my-drag></div>
+<div my-drag></div>
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('appModule',[]);
+    //如果指令有-的话 默认转成驼峰
+    app.directive('myDrag', function () {
+        return {
+            restrict:'A',
+            link: function (scope,element,attrs) {
+                //以前说controller里不要操作dom，要在指令里操纵
+                element.on('mousedown', function (ev) {
+//鼠标距离盒子边缘的位置=当前鼠标按下的距离-当前盒子距离边缘的距离
+                    var disx = ev.pageX - element[0].offsetLeft;
+                    var disy = ev.pageY - element[0].offsetTop;
+                    //给当document绑定事件
+                    angular.element(document).on('mousemove', function (ev) {
+                        var L = ev.pageX - disx;
+                        var T = ev.pageY - disy;
+                        //指定名字的时候写的严格一些
+                        element.css('top',T+'px');
+                        element.css('left',L+'px');
+
+                    });
+                    angular.element(document).on('mouseup', function () {
+                        angular.element(document).off();
+                    })
+                    ev.preventDefault();
+                });
+                //element.html('hello');
+            }
+        }
+    })
+</script>
+</body>
+</html>
