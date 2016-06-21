@@ -5,7 +5,8 @@
     <title>Title</title>
     <link rel="stylesheet" href="bootstrap.css">
 </head>
-<body ng-controller="ctrl">
+<!--ng-controller="ctrl"-->
+<body>
 <div class="panel panel-default" my-panel content="我是pannel的内容">
     这是一个表头
 </div>
@@ -13,10 +14,10 @@
 <script>
     var app = angular.module('appModule',[]);
     //如果指令有-的话 默认转成驼峰
-    app.controller('ctrl', function ($scope) {
+  /*  app.controller('ctrl', function ($scope) {
         $scope.data = "我是pannel的内容";
         //通过元素上的content属性绑定到directive上
-    });
+    });*/
     app.directive('myPanel', function () {
         return {
             restrict: 'A',
