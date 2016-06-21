@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="angular-csp.css">
+</head>
+<body >
+<div ng-controller="ctrl" id="div1">
+    {{name}}
+</div>
+<div ng-controller="ctrl" id="div2">
+    {{name}}
+</div>
+<script src="angular.js"></script>
+<script>
+    //两个模块 现在毫无关系的 而且通过两个模块创建了两个控制器
+    var app = angular.module('appModule',[]);
+    app.controller('ctrl', function ($scope,$http) {
+        $scope.name = 100;
+    });
+    var app1 = angular.module('appModule1',[]);
+    app1.controller('ctrl', function ($scope,$http) {
+        $scope.name = 200;
+    });
+    //通过具体的dom指定模型bootstrap启动
+    angular.bootstrap(div1,['appModule']);
+    angular.bootstrap(div2,['appModule1']);
+</script>
+</body>
+</html>

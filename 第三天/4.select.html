@@ -7,24 +7,19 @@
     <link rel="stylesheet" href="angular-csp.css">
 </head>
 <body ng-controller="ctrl">
-<!--se.price 是 option中的value值  se.name 是显示的值-->
-<!--select是否被选中根据value来确定的-->
-<select ng-model="a" ng-options="se.price as se.name for se in selects">
-    <!--设置没有被选中的状态-->
-    <option value="">请选择</option>
-</select>
+{{name}}
 <script src="angular.js"></script>
 <script>
-    //ng-readonly禁用input内容 变成仅读
-    var app = angular.module('appModule',[]);
+    //多模块   当前主模块运行的时候引用appModule1的模块
+    var app = angular.module('appModule',['appModule1']);
     app.controller('ctrl', function ($scope,$http) {
-        $scope.$watch('a', function (newVal) {
-            console.log(newVal);
-        })
-        $http.get('./book.json').success(function (data) {
-            $scope.selects = data
-        });
-
+        //覆盖原有声明的ctrl  不输出值
+       // $scope.name = 1;
+    });
+    //新建立了一个模块
+    var app1 = angular.module('appModule1',[]);
+    app1.controller('ctrl', function ($scope,$http) {
+        $scope.name = 2;
     });
 </script>
 </body>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="angular-csp.css">
+</head>
+<body ng-controller="ctrl">
+{{'aaabbb' |  myCapitalize:5}} 对应大写 {{content}}
+{{cc}}
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('appModule',[]);
+    //在控制器中使用过滤器 要使用什么过滤器 就在后面加上Filter
+    app.controller('ctrl', function ($scope,currencyFilter,myCapitalizeFilter) {
+        //currencyFilter 要用数字
+        $scope.cc = myCapitalizeFilter('eeebbb',2)
+        $scope.content = currencyFilter('123','*');
+    });
+    //自定义过滤器
+    //通过模块创建过滤器 第一个参数是过滤器的名字
+    app.filter('myCapitalize', function (uppercaseFilter) {
+        //返回一个工厂方法 第一个参数是当前的输入的值， 第二个参数:后面的值
+        return function (input,len){
+ return uppercaseFilter(input.slice(0,len))+input.slice(len);
+        }
+        //在自定义的过滤器中使用 原有的控制器
+    })
+</script>
+</body>
+</html>
