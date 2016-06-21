@@ -1,0 +1,190 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'nodeppt',
+1 verbose cli   '-g' ]
+2 info using npm@2.15.5
+3 info using node@v4.4.5
+4 verbose install initial load of C:\Users\10354_000\AppData\Roaming\npm\package.json
+5 verbose readDependencies loading dependencies from C:\Users\10354_000\AppData\Roaming\npm\package.json
+6 silly cache add args [ 'nodeppt', null ]
+7 verbose cache add spec nodeppt
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'nodeppt',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'nodeppt',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: 'latest',
+8 silly cache add   type: 'tag' }
+9 silly addNamed nodeppt@latest
+10 verbose addNamed "latest" is being treated as a dist-tag for nodeppt
+11 info addNameTag [ 'nodeppt', 'latest' ]
+12 silly mapToRegistry name nodeppt
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry data Result {
+15 silly mapToRegistry   raw: 'nodeppt',
+15 silly mapToRegistry   scope: null,
+15 silly mapToRegistry   name: 'nodeppt',
+15 silly mapToRegistry   rawSpec: '',
+15 silly mapToRegistry   spec: 'latest',
+15 silly mapToRegistry   type: 'tag' }
+16 silly mapToRegistry uri https://registry.npmjs.org/nodeppt
+17 verbose addNameTag registry:https://registry.npmjs.org/nodeppt not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/nodeppt
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 16:03:29
+21 verbose request using bearer token for auth
+22 verbose request id dcef625fdd93816f
+23 verbose etag "54V9V4661BGDP7FDE6PH3IVP2"
+24 http request GET https://registry.npmjs.org/nodeppt
+25 http 304 https://registry.npmjs.org/nodeppt
+26 verbose headers { 'cache-control': 'max-age=300',
+26 verbose headers   'accept-ranges': 'bytes',
+26 verbose headers   date: 'Thu, 16 Jun 2016 08:03:33 GMT',
+26 verbose headers   via: '1.1 varnish',
+26 verbose headers   connection: 'keep-alive',
+26 verbose headers   'x-served-by': 'cache-itm7425-ITM',
+26 verbose headers   'x-cache': 'MISS',
+26 verbose headers   'x-cache-hits': '0',
+26 verbose headers   'x-timer': 'S1466064212.692570,VS0,VE727',
+26 verbose headers   vary: 'Accept-Encoding' }
+27 silly get cb [ 304,
+27 silly get   { 'cache-control': 'max-age=300',
+27 silly get     'accept-ranges': 'bytes',
+27 silly get     date: 'Thu, 16 Jun 2016 08:03:33 GMT',
+27 silly get     via: '1.1 varnish',
+27 silly get     connection: 'keep-alive',
+27 silly get     'x-served-by': 'cache-itm7425-ITM',
+27 silly get     'x-cache': 'MISS',
+27 silly get     'x-cache-hits': '0',
+27 silly get     'x-timer': 'S1466064212.692570,VS0,VE727',
+27 silly get     vary: 'Accept-Encoding' } ]
+28 verbose etag https://registry.npmjs.org/nodeppt from cache
+29 verbose get saving nodeppt to C:\Users\10354_000\AppData\Roaming\npm-cache\registry.npmjs.org\nodeppt\.cache.json
+30 verbose correctMkdir C:\Users\10354_000\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+31 silly addNameTag next cb for nodeppt with tag latest
+32 silly addNamed nodeppt@1.4.2
+33 verbose addNamed "1.4.2" is a plain semver version for nodeppt
+34 silly cache afterAdd nodeppt@1.4.2
+35 verbose afterAdd C:\Users\10354_000\AppData\Roaming\npm-cache\nodeppt\1.4.2\package\package.json not in flight; writing
+36 verbose correctMkdir C:\Users\10354_000\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+37 verbose afterAdd C:\Users\10354_000\AppData\Roaming\npm-cache\nodeppt\1.4.2\package\package.json written
+38 silly install resolved [ { name: 'nodeppt',
+38 silly install resolved     jsname: 'nodeppt',
+38 silly install resolved     description: 'A simple, in-browser, markdown-driven presentation framework',
+38 silly install resolved     version: '1.4.2',
+38 silly install resolved     site: 'https://github.com/ksky521/nodePPT',
+38 silly install resolved     author: { name: 'Theo Wang', email: 'ksky521@gmail.com' },
+38 silly install resolved     bin: { nodeppt: 'bin/nodeppt' },
+38 silly install resolved     repository: { type: 'git', url: 'git://github.com/ksky521/nodePPT.git' },
+38 silly install resolved     dependencies:
+38 silly install resolved      { chokidar: '^1.0.0-rc3',
+38 silly install resolved        colors: '^1.1.2',
+38 silly install resolved        commander: '^2.9.0',
+38 silly install resolved        connect: '2.11.0',
+38 silly install resolved        cookie: '^0.2.3',
+38 silly install resolved        debug: '^2.2.0',
+38 silly install resolved        ejs: '0.8.4',
+38 silly install resolved        ipv4: '0.0.4',
+38 silly install resolved        mathjax: '2.6.1',
+38 silly install resolved        read: '^1.0.7',
+38 silly install resolved        'socket.io': '1.3.3' },
+38 silly install resolved     keywords:
+38 silly install resolved      [ 'presentation',
+38 silly install resolved        'powerpoint',
+38 silly install resolved        'slideshow',
+38 silly install resolved        'keynote',
+38 silly install resolved        'ppt',
+38 silly install resolved        'slide',
+38 silly install resolved        'revealjs',
+38 silly install resolved        'impressjs',
+38 silly install resolved        'markdown' ],
+38 silly install resolved     license: 'SEE LICENSE IN MIT-LICENSE.txt',
+38 silly install resolved     gitHead: 'b377c6696546eecc706383279efb3af09d8c83e9',
+38 silly install resolved     bugs: { url: 'https://github.com/ksky521/nodePPT/issues' },
+38 silly install resolved     homepage: 'https://github.com/ksky521/nodePPT#readme',
+38 silly install resolved     _id: 'nodeppt@1.4.2',
+38 silly install resolved     scripts: {},
+38 silly install resolved     _shasum: '2903fba21cf438fb877e6c36a8718759956125fd',
+38 silly install resolved     _from: 'nodeppt@latest',
+38 silly install resolved     _npmVersion: '2.14.20',
+38 silly install resolved     _nodeVersion: '4.4.0',
+38 silly install resolved     _npmUser: { name: 'ksky521', email: 'ksky521@gmail.com' },
+38 silly install resolved     dist:
+38 silly install resolved      { shasum: '2903fba21cf438fb877e6c36a8718759956125fd',
+38 silly install resolved        tarball: 'https://registry.npmjs.org/nodeppt/-/nodeppt-1.4.2.tgz' },
+38 silly install resolved     maintainers: [ [Object] ],
+38 silly install resolved     _npmOperationalInternal:
+38 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+38 silly install resolved        tmp: 'tmp/nodeppt-1.4.2.tgz_1463538108853_0.38417293783277273' },
+38 silly install resolved     directories: {},
+38 silly install resolved     _resolved: 'https://registry.npmjs.org/nodeppt/-/nodeppt-1.4.2.tgz',
+38 silly install resolved     readme: 'ERROR: No README data found!' } ]
+39 info install nodeppt@1.4.2 into C:\Users\10354_000\AppData\Roaming\npm
+40 info installOne nodeppt@1.4.2
+41 verbose installOne of nodeppt to C:\Users\10354_000\AppData\Roaming\npm not in flight; installing
+42 verbose correctMkdir C:\Users\10354_000\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+43 verbose lock using C:\Users\10354_000\AppData\Roaming\npm-cache\_locks\nodeppt-b06e01b985a8f4ab.lock for C:\Users\10354_000\AppData\Roaming\npm\node_modules\nodeppt
+44 silly install write writing nodeppt 1.4.2 to C:\Users\10354_000\AppData\Roaming\npm\node_modules\nodeppt
+45 verbose unbuild node_modules\nodeppt
+46 info preuninstall nodeppt@1.4.2
+47 info uninstall nodeppt@1.4.2
+48 verbose unbuild rmStuff nodeppt@1.4.2 from C:\Users\10354_000\AppData\Roaming\npm\node_modules
+49 silly gentlyRm C:\Users\10354_000\AppData\Roaming\npm\nodeppt.cmd is being gently removed
+50 silly gentlyRm verifying C:\Users\10354_000\AppData\Roaming\npm is an npm working directory
+51 silly gentlyRm containing path C:\Users\10354_000\AppData\Roaming\npm is under npm's control, in C:\Users\10354_000\AppData\Roaming\npm
+52 silly gentlyRm deletion target C:\Users\10354_000\AppData\Roaming\npm\nodeppt.cmd is under C:\Users\10354_000\AppData\Roaming\npm
+53 verbose gentlyRm vacuuming from C:\Users\10354_000\AppData\Roaming\npm\nodeppt.cmd up to C:\Users\10354_000\AppData\Roaming\npm
+54 silly gentlyRm C:\Users\10354_000\AppData\Roaming\npm\nodeppt is being gently removed
+55 silly gentlyRm verifying C:\Users\10354_000\AppData\Roaming\npm is an npm working directory
+56 silly gentlyRm containing path C:\Users\10354_000\AppData\Roaming\npm is under npm's control, in C:\Users\10354_000\AppData\Roaming\npm
+57 silly gentlyRm deletion target C:\Users\10354_000\AppData\Roaming\npm\nodeppt is under C:\Users\10354_000\AppData\Roaming\npm
+58 verbose gentlyRm vacuuming from C:\Users\10354_000\AppData\Roaming\npm\nodeppt up to C:\Users\10354_000\AppData\Roaming\npm
+59 silly vacuum-fs Error: EPERM: operation not permitted, lstat 'C:\Users\10354_000\AppData\Roaming\npm\nodeppt'
+59 silly vacuum-fs     at Error (native)
+60 verbose unlock done using C:\Users\10354_000\AppData\Roaming\npm-cache\_locks\nodeppt-b06e01b985a8f4ab.lock for C:\Users\10354_000\AppData\Roaming\npm\node_modules\nodeppt
+61 verbose stack Error: EPERM: operation not permitted, lstat 'C:\Users\10354_000\AppData\Roaming\npm\nodeppt'
+61 verbose stack     at Error (native)
+62 verbose cwd C:\Users\10354_000\Desktop\angular
+63 error Windows_NT 6.3.9600
+64 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "nodeppt" "-g"
+65 error node v4.4.5
+66 error npm  v2.15.5
+67 error path C:\Users\10354_000\AppData\Roaming\npm\nodeppt
+68 error code EPERM
+69 error errno -4048
+70 error syscall lstat
+71 error Error: EPERM: operation not permitted, lstat 'C:\Users\10354_000\AppData\Roaming\npm\nodeppt'
+71 error     at Error (native)
+71 error  { [Error: EPERM: operation not permitted, lstat 'C:\Users\10354_000\AppData\Roaming\npm\nodeppt']
+71 error   errno: -4048,
+71 error   code: 'EPERM',
+71 error   syscall: 'lstat',
+71 error   path: 'C:\\Users\\10354_000\\AppData\\Roaming\\npm\\nodeppt' }
+72 error Please try running this command again as root/Administrator.
+73 verbose exit [ -4048, true ]
+74 verbose unbuild node_modules\nodeppt
+75 info preuninstall nodeppt@1.4.2
+76 info uninstall nodeppt@1.4.2
+77 verbose unbuild rmStuff nodeppt@1.4.2 from C:\Users\10354_000\AppData\Roaming\npm\node_modules
+78 silly gentlyRm C:\Users\10354_000\AppData\Roaming\npm\nodeppt.cmd is being gently removed
+79 silly gentlyRm verifying C:\Users\10354_000\AppData\Roaming\npm is an npm working directory
+80 silly gentlyRm containing path C:\Users\10354_000\AppData\Roaming\npm is under npm's control, in C:\Users\10354_000\AppData\Roaming\npm
+81 silly gentlyRm deletion target C:\Users\10354_000\AppData\Roaming\npm\nodeppt.cmd is under C:\Users\10354_000\AppData\Roaming\npm
+82 verbose gentlyRm vacuuming from C:\Users\10354_000\AppData\Roaming\npm\nodeppt.cmd up to C:\Users\10354_000\AppData\Roaming\npm
+83 silly gentlyRm C:\Users\10354_000\AppData\Roaming\npm\nodeppt is being gently removed
+84 silly gentlyRm verifying C:\Users\10354_000\AppData\Roaming\npm is an npm working directory
+85 silly gentlyRm containing path C:\Users\10354_000\AppData\Roaming\npm is under npm's control, in C:\Users\10354_000\AppData\Roaming\npm
+86 silly gentlyRm deletion target C:\Users\10354_000\AppData\Roaming\npm\nodeppt is under C:\Users\10354_000\AppData\Roaming\npm
+87 verbose gentlyRm vacuuming from C:\Users\10354_000\AppData\Roaming\npm\nodeppt up to C:\Users\10354_000\AppData\Roaming\npm
+88 silly vacuum-fs Error: EPERM: operation not permitted, lstat 'C:\Users\10354_000\AppData\Roaming\npm\nodeppt'
+88 silly vacuum-fs     at Error (native)
+89 error error rolling back Error: EPERM: operation not permitted, lstat 'C:\Users\10354_000\AppData\Roaming\npm\nodeppt'
+89 error error rolling back     at Error (native)
+89 error error rolling back  { [Error: EPERM: operation not permitted, lstat 'C:\Users\10354_000\AppData\Roaming\npm\nodeppt']
+89 error error rolling back   errno: -4048,
+89 error error rolling back   code: 'EPERM',
+89 error error rolling back   syscall: 'lstat',
+89 error error rolling back   path: 'C:\\Users\\10354_000\\AppData\\Roaming\\npm\\nodeppt' }

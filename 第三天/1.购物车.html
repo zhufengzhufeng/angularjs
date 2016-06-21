@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body ng-controller="ctrl">
+<table class="table table-bordered">
+    <tr>
+        <td>序号</td>
+        <td>书的名字</td>
+        <td>书的价格</td>
+        <td>书的页数</td>
+        <td>书的数量</td>
+        <td>小计</td>
+        <td>操作</td>
+    </tr>
+    <tr ng-repeat="book in books">
+        <td>{{$index+1}}</td>
+        <td>{{book.name}}</td>
+        <td>{{book.price}}</td>
+        <td>{{book.page}}</td>
+        <td><input type="text" ng-model="book.count"></td>
+        <td>{{book.price*book.count}}</td>
+        <!--在数组里删除当前项目-->
+        <td><button class="btn-danger btn" ng-click="books.splice($index,1)">删除</button></td>
+    </tr>
+    <tr>
+        <td colspan="7">
+            总额：{{total()}}
+        </td>
+    </tr>
+</table>
+<script src="angular.js"></script>
+<script>
+    var app = angular.module('appModule',[]);
+    app.controller('ctrl', function ($scope) {
+    $scope.books=[
+            {name:'javascript',price:10,page:200,count:1},
+            {name:'node',price:30,page:400,count:1},
+            {name:'angular',price:50,page:100,count:1},
+            {name:'vuejs',price:20,page:100,count:1},
+    ];
+    $scope.total = function () {
+        var sum = 0;
+        angular.forEach($scope.books, function (item) {
+            //每一个商品的总价格
+            sum+= item.count*item.price;
+        });
+        return sum;
+    }
+    });
+</script>
+</body>
+</html>
