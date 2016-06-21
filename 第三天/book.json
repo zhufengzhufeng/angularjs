@@ -1,0 +1,6 @@
+[
+  {"name":"javascript","price":10,"page":200,"count":1},
+  {"name":"node","price":30,"page":400,"count":1},
+  {"name":"angular","price":50,"page":100,"count":1},
+  {"name":"vuejs","price":20,"page":100,"count":1}
+]

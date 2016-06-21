@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="angular-csp.css">
+</head>
+<body ng-controller="ctrl">
+<!--se.price 是 option中的value值  se.name 是显示的值-->
+<!--select是否被选中根据value来确定的-->
+<select ng-model="a" ng-options="se.price as se.name for se in selects">
+    <!--设置没有被选中的状态-->
+    <option value="">请选择</option>
+</select>
+<script src="angular.js"></script>
+<script>
+    //ng-readonly禁用input内容 变成仅读
+    var app = angular.module('appModule',[]);
+    app.controller('ctrl', function ($scope,$http) {
+        $scope.$watch('a', function (newVal) {
+            console.log(newVal);
+        })
+        $http.get('./book.json').success(function (data) {
+            $scope.selects = data
+        });
+
+    });
+</script>
+</body>
+</html>

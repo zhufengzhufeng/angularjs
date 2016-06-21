@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="angular-csp.css">
 </head>
 <body ng-controller="ctrl">
-<table class="table table-bordered">
+ <!--加ng-cloak 并且引入angular css样式-->
+<table class="table table-bordered" ng-cloak>
     <tr>
         <td>序号</td>
         <td>书的名字</td>
@@ -16,7 +18,7 @@
         <td>小计</td>
         <td>操作</td>
     </tr>
-    <tr ng-repeat="book in books">
+    <tr ng-repeat="book in books" ng-class="{'back':$even}">
         <td>{{$index+1}}</td>
         <td>{{book.name}}</td>
         <td>{{book.price}}</td>
@@ -27,7 +29,7 @@
         <td><button class="btn-danger btn" ng-click="books.splice($index,1)">删除</button></td>
     </tr>
     <tr>
-        <td colspan="7">
+        <td colspan="7" ng-show="books.length">
             总额：{{total()}}
         </td>
     </tr>
@@ -35,13 +37,23 @@
 <script src="angular.js"></script>
 <script>
     var app = angular.module('appModule',[]);
-    app.controller('ctrl', function ($scope) {
-    $scope.books=[
-            {name:'javascript',price:10,page:200,count:1},
-            {name:'node',price:30,page:400,count:1},
-            {name:'angular',price:50,page:100,count:1},
-            {name:'vuejs',price:20,page:100,count:1},
-    ];
+    app.controller('ctrl', function ($scope,$http) {
+        //$http 和jquery的ajax一样 angular封装的服务
+        /*$.get("test.php", function(data){
+            alert("Data Loaded: " + data);
+        });*/
+        //jquery get方法
+        $http.get('./book.json').success(function (data) {
+            $scope.books=data;
+        });
+        /*$http({
+            url:'./book.json',
+            method:'GET'
+        }).success(function (data) {
+            //如果数据是字符串格式的 ，默认转回json
+            $scope.books=data;
+        });*/
+        //iframe postMessage
     $scope.total = function () {
         var sum = 0;
         angular.forEach($scope.books, function (item) {

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="angular-csp.css">
+</head>
+<body ng-controller="ctrl">
+<button ng-disabled="no" class="btn btn-info" ng-click="getCode()">{{val}}</button>
+<script src="angular.js"></script>
+<script>
+    //当点击按钮的时候 5秒内不可以 过五秒以后可以再次点击
+    //获取验证码  ng-click以后 开始倒计时倒计时5秒 结束后在变成获取验证码
+    var app = angular.module('appModule',[]);
+    app.controller('ctrl', function ($scope,$interval) {
+        $scope.no = false;
+        $scope.val = '点击获取验证码';
+        $scope.getCode = function(){
+            $scope.no = !$scope.no;
+            $scope.val = 5;
+            var timer = $interval(function(){
+                $scope.val--;
+                if($scope.val==0){
+                    $scope.no = !$scope.no;
+                    $scope.val = '点击获取验证码';
+                    $interval.cancel(timer);
+                }
+            },1000)
+        }
+
+       /* $scope.content = '获取验证码';
+        $scope.no = false;
+        $scope.timer = function () {
+            var i = 5;
+            $scope.no = true;
+            var timer = $interval(function () {
+                i--;
+                $scope.content = '剩余'+i+'妙';
+                if(i==0){
+                    $interval.cancel(timer);
+                    $scope.content = '获取验证码';
+                    $scope.no = false;
+                }
+            },1000);
+        }*/
+    });
+</script>
+</body>
+</html>

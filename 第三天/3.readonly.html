@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="angular-csp.css">
+</head>
+<body ng-controller="ctrl">
+<input type="text" ng-readonly="flag" ng-value="100">
+<script src="angular.js"></script>
+<script>
+    //ng-readonly禁用input内容 变成仅读
+    var app = angular.module('appModule',[]);
+    app.controller('ctrl', function ($scope,$timeout) {
+        $scope.flag = false
+        $timeout(function () {
+            $scope.flag = true
+        },1000)
+    });
+</script>
+</body>
+</html>
