@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body ng-controller="ctrl">
-<div class="panel panel-default" my-panel content="我是pannel的内容" girl="beautiful" boy="qq" btn="sayHandsome()">
+<div class="panel panel-default" my-panel content="我是pannel的内容" girl="beautiful" boy="qq" btn="sayHandsome(ee)"> ee代表的是girl的值
     这是一个表头
 </div>
 <script src="angular.js"></script>
@@ -17,8 +17,8 @@
         $scope.data = "我是pannel的内容";
         //通过元素上的content属性绑定到directive上
         $scope.qq='handsome';
-        $scope.sayHandsome = function () {
-            alert('handsome')
+        $scope.sayHandsome = function (girl) {//形参
+            alert('handsome'+girl);
         }
     });
     app.directive('myPanel', function () {
@@ -30,14 +30,17 @@
                 con:'@content',//应用content={{data}}
                 girl:'@', //@取得是值 ""
                 boy:'=', //=取得是作用域上的动态的值
-                sayHandsome:'&btn'
+                sayHandsome:'&btn' //绑定作用域上的方法
             },
-            template:'<div class="panel-heading" ng-transclude></div>\
+            template:'<div class="panel-heading" >dsfsd <span ng-transclude></span></div>\
                     <div class="panel-body">\
-                    {{con}}{{girl}}{{boy}} <button ng-click="sayHandsome()"></button>    \
-                </div>'
+                    {{con}}{{girl}}{{boy}} <button ng-click="sayHandsome({ee:girl})"></button>    \
+            </div>'
+            //第一个girl是名字 第二个girl是具体scope上的值
         }
-    })
+    });
+    //指令中触发的函数 是scope上的方法 让指令调用我们的数据
+    //指令和指令间的交互
 </script>
 </body>
 </html>
